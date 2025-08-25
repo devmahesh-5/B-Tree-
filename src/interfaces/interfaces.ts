@@ -13,7 +13,7 @@ export interface BTreeConfig {
 
 export interface AnimationStep  {
   tree: BTreeNode;
-  action: "insert" | "delete" | "split" | "merge" | "traverse";
+  action: "insert" | "delete" | "split" | "merge" | "traverse" | "search";
   highlight?: string[]; // Node IDs to highlight
   message: string;
 };

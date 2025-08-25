@@ -70,6 +70,18 @@ export const BTreeDisplay = () => {
     );
   };
 
+  const handleDelete = (key: number) => {
+    const newSteps = btree.delete(key);
+    setSteps(newSteps);
+    setCurrentStep(0);
+  };
+
+  // const handleSearch = (key: number) => {
+  //   const newSteps = btree.search(key);
+  //   setSteps(newSteps);
+  //   setCurrentStep(0);
+  // };
+
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="w-full mx-auto">
@@ -101,6 +113,32 @@ export const BTreeDisplay = () => {
             >
               Insert Key
             </button>
+
+            <button
+              className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+              onClick={() => {
+                const input = document.querySelector('input[type="number"]') as HTMLInputElement;
+                if (input?.value) {
+                  handleDelete(parseInt(input.value));
+                  input.value = '';
+                }
+              }}
+            >
+              Delete Key
+            </button>
+
+            {/* <button
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+              onClick={() => {
+                const input = document.querySelector('input[type="number"]') as HTMLInputElement;
+                if (input?.value) {
+                  handleSearch(parseInt(input.value));
+                  input.value = '';
+                }
+              }}
+            >
+              Search Key
+            </button> */}
           </div>
 
           {/* Animation Controls */}
