@@ -33,7 +33,7 @@ A React-based interactive visualization of B-Trees (2-3-4 trees), built with **F
 ### Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/devmahesh-5/B-Tree-.git
 cd btree-visualization
 npm install
 npm start
